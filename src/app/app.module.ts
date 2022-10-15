@@ -9,12 +9,28 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { InputChipComponent } from './input-chip/input-chip.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { ListComponentsComponent } from './list-components/list-components.component';
+import { WebsiteComponent } from './website/website.component';
+import { LinksComponent } from './links/links.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccordionComponent,
-    InputChipComponent
+    InputChipComponent,
+    HomeComponent,
+    ContactusComponent,
+    AboutusComponent,
+    FooterComponent,
+    HeaderComponent,
+    ListComponentsComponent,
+    WebsiteComponent,
+    LinksComponent
   ],
   imports: [
     BrowserModule,

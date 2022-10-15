@@ -1,0 +1,15 @@
+<div class="container my-4">
+  <h3 class="text-center my-4">
+    <span class="py-2 px-3 bg-info fw-bold text-dark rounded-pill">Components</span>
+  </h3>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let item of componentList">
+      <a href="javascript:void(0)" class="text-decoration-none" (click)="navigation(item.Link)" >
+        <div class="card py-5 text-center fw-bold fs-4 shadow-lg text-dark">
+          <h4 class="text-truncate px-2 col-12">{{item.ComponentName}}</h4>
+          <small class="mx-2 fs-6 text-muted text-truncate" data-bs-toggle="tooltip" data-bs-placement="bottom" [title]="item.Descripotion">{{item.Descripotion}}</small>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
