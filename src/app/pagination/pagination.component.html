@@ -1,0 +1,17 @@
+<div class="d-flex align-items-center justify-content-between px-3">
+  <div>
+    {{pagination.pageNo}} of {{total}}
+  </div>
+  <div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination" >
+        <li class="page-item" [ngClass]="{'disabled': pagination.pageNo == 1}"><a class="page-link" (click)="pagination.onFirst()">First</a></li>
+        <li class="page-item" [ngClass]="{'disabled': pagination.pageNo == 1}"><a class="page-link" (click)="pagination.onPrevious()">Previous</a></li>
+        <input type="number" min="1" max="5" [totalPage]="total" value="1" appPagination #pagination="pagination" (keyup)="pagination.customPage($event)">
+        <li class="page-item" [ngClass]="{'disabled': pagination.pageNo == total}"><a class="page-link" (click)="pagination.onNext()">Next</a></li>
+        <li class="page-item" [ngClass]="{'disabled': pagination.pageNo == total}"><a class="page-link" (click)="pagination.onLast()">Last</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</div>

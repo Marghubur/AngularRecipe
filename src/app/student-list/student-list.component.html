@@ -1,0 +1,80 @@
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Address</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of students; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{item.firstName}} {{item.lastName}}</td>
+            <td>{{item.fatherName}}</td>
+            <td>{{item.dob | date}}</td>
+            <td>{{item.address.street}}, {{item.address.city}}, {{item.address.state}}, {{item.address.zipCode}}</td>
+            <td>
+                <a href="javascript:void(0)" class="text-decoration-none" (click)="viewStudent(item)">
+                    <i class="fa fa-eye fa-lg px-2"></i>
+                </a>
+                <a href="javascript:void(0)" class="text-decoration-none" (click)="viewId(item)">
+                    <i class="fa fa-address-card fa-lf px-2"></i>
+                </a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="idModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="idModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" *ngIf="selectedStudent != null">
+            <div class="container">
+                <div class="padding">
+                <div class="font">
+                    <div class="companyname">Planics<br><span class="tab">Solution</span></div>
+                    <div class="top">
+                        <img src="assets/character.png" alt="">
+                    </div>
+                    <div class="">
+                        <div class="ename">
+                        <p class="p1"><b>{{selectedStudent.firstName}} {{selectedStudent.lastName}}</b></p>
+                        <p>{{selectedStudent.fatherName}}</p>
+                        </div>
+                        <div class="edetails">
+                            <P><b>Mobile No :</b>{{selectedStudent.mobile}}</P>
+                            <p><b>DOB :</b> {{selectedStudent.dob | date}}</p>
+                            <div class="Address"><b>Address : </b>{{selectedStudent.address.street}}, {{selectedStudent.address.city}}, {{selectedStudent.address.state}}, {{selectedStudent.address.zipCode}}</div>
+                            
+                        </div>
+            
+                        <div class="signature">
+                            <img src="assets/signature.PNG" class="" alt="">
+                        </div>
+            
+                        <div class="barcode">
+                            <img src="assets/qrsample.png" alt="">
+                        </div>
+                        <div class="qr">
+                            <img src="assets/barcode.PNG" alt="">
+                        </div>
+            
+                  
+                    </div>
+                </div>
+            </div>
+               
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

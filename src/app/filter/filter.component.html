@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <input type="text" class="form-control" placeholder="search" [(ngModel)]="searchText">
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Component Name</td>
+        <td>Link</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of item | search: searchText">
+        <td>{{item.Id}}</td>
+        <td>{{item.ComponentName}}</td>
+        <td>{{item.Link}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="d-flex align-items-center justify-content-end">
+  <div class="col-md-1">
+    <select class="form-select" [value]="itemsPerPage" (change)="changePageSize($event)">
+      <option value="2">2 per page</option>
+      <option value="4">4 per page</option>
+      <option value="6">6 per page</option>
+      <option value="8">8 per page</option>
+    </select>
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-outline-primary" *ngFor="let item of pageNumber" [ngClass]="{'active': item == selectedPage}" (click)="changePage(item)">{{item}}</button>
+  </div>
+</div>
+
+<!-- <app-pagination2 [componentList]="componentList" (perPageItem)="perPageItem($event)"></app-pagination2> -->
+<!--  -->

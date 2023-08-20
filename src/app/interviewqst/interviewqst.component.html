@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-md-2">
+      <div class="bg-white shadow side-menu-height">
+        <div class="mt-3">
+          <a href="javascript:void" class="text-decoration-none" *ngFor="let item of sideMenu" (click)="showSection(item.Link)">
+            <div class="row ps-4 py-3 text-dark" [ngClass]="{'active': CurrentSection == item.Link}">
+              <div class="col-md-2 ">
+                <i [class]="item.Icon"></i>
+              </div>
+              <div class="col-md-10 ">
+                {{item.Name}}
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 side-menu-height" >
+      <div class="card mb-4" *ngIf="CurrentSection == 'Angular'">
+        <h5 class="card-header">Angular related Questions and Answered</h5>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Special title treatment</h5> -->
+          <details *ngFor="let item of angularQst; let i = index;">
+            <summary><span class="fw-bold">Q. No. {{i+1}}:</span> {{item.Question}}</summary>
+            <div class="pb-2 ps-3">
+              <p class="mb-0" *ngIf="item.Ans != null && item.Ans !='' "><span class="fw-bold">Ans:</span> {{item.Ans}}</p>
+              <h6 class="ms-4 ps-3 mb-0 py-2" *ngIf="item.SubHeading != null && item.SubHeading != ''">{{item.SubHeading}}</h6>
+              <ng-container *ngIf="item.Points != null">
+                <ul class="ms-5 mb-0">
+                  <li *ngFor="let item of item.Points">{{item}}</li>
+                </ul>
+              </ng-container>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="card my-4" *ngIf="CurrentSection == 'C#'">
+        <h5 class="card-header">OOPS related Questions and Answered</h5>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Special title treatment</h5> -->
+          <details *ngFor="let item of oppsQst; let i = index;">
+            <summary><span class="fw-bold">Q. No. {{i+1}}:</span> {{item.Question}}</summary>
+            <div class="pb-2 ps-3">
+              <p class="mb-0" *ngIf="item.Ans != null && item.Ans !='' "><span class="fw-bold">Ans:</span> {{item.Ans}}</p>
+              <h6 class="ms-4 ps-3 mb-0 py-2" *ngIf="item.SubHeading != null && item.SubHeading != ''">{{item.SubHeading}}</h6>
+              <ng-container *ngIf="item.Points != null">
+                <ul class="ms-5 mb-0">
+                  <li *ngFor="let item of item.Points">{{item}}</li>
+                </ul>
+              </ng-container>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="card my-4" *ngIf="CurrentSection == '.Net Core' || CurrentSection == 'LINQ'">
+        <img src="assets/7.jpg" width="100%" class="vh-100" alt="">
+      </div>
+
+    </div>
+  </div>
+</div>

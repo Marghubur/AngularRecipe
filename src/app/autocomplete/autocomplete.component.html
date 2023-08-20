@@ -1,0 +1,12 @@
+<div class="mx-2">
+  <input type="text" [placeholder]="autoComplete.Placeholder" class="form-control">
+  <section>
+    <div class="shadow bg-light card border-0">
+      <ul class="list-unstyled">
+        <li *ngFor="let item of autoComplete.Data" class="py-1 ps-2">
+          <a href="javascript:void(0)" class="text-decoration-none">{{item.value}}</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

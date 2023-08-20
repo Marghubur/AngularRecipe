@@ -1,9 +1,17 @@
 <!-- Banner Section Start -->
-  <div class="img-container">
-    <img src="assets/banner-5.png" alt="banner" class="img-fluid">
-  </div>
-<!-- End -->
+<!-- <owl-carousel-o [options]="customOptions">
 
+  <ng-container *ngFor="let slide of slidesStore; let i = index;">
+    <ng-template carouselSlide [id]="i">
+      <img [src]="slide.src">
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o> -->
+<!-- End -->
+<div class="col-md-12 shadow">
+  <img src="assets/banner-5.png" class="img-fluid" alt="">
+</div>
 <div class="container my-4">
   <h3 class="text-center my-4">
     <span class="py-2 px-3 bg-info fw-bold text-dark rounded-pill">Components</span>
@@ -12,7 +20,6 @@
     <div class="col-md-3 component-card overflow-hidden bg-white mt-3" *ngFor="let item of componentList">
       <a href="javascript:void(0)" class="text-decoration-none" (click)="navigation(item.Link)" >
         <div class="card overflow-hidden text-center fw-bold fs-4 shadow-lg text-dark">
-          <img [src]="item.image" alt="">
           <div class="card-body">
             <h4 class="text-truncate px-2 col-12">{{item.ComponentName}}</h4>
             <p class="mb-0 text-truncate">

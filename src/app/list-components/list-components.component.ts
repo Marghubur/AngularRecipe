@@ -7,7 +7,7 @@ declare var $: any;
   styleUrls: ['./list-components.component.scss']
 })
 export class ListComponentsComponent implements OnInit, AfterViewChecked {
-
+  searchText: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -34,9 +34,24 @@ export class ListComponentsComponent implements OnInit, AfterViewChecked {
     'Link': 'accordion'
   },
   {
-    'ComponentName': 'Input Chip',
+    'ComponentName': 'Search Data',
     'Descripotion': 'you might wanna add a null check to the return statement, in my case I was passing in an empty string and it was causing my app to crash. return value && value.length > limit ? value.substring(0, limit) + trail : value; ',
-    'Link': 'input-chip'
+    'Link': 'filtter'
+  },
+  {
+    'ComponentName': 'Accordion',
+    'Descripotion': 'you might wanna add a null check to the return statement, in my case I was passing in an empty string and it was causing my app to crash. return value && value.length > limit ? value.substring(0, limit) + trail : value; ',
+    'Link': 'accordion'
+  },
+  {
+    'ComponentName': 'Accordion',
+    'Descripotion': 'you might wanna add a null check to the return statement, in my case I was passing in an empty string and it was causing my app to crash. return value && value.length > limit ? value.substring(0, limit) + trail : value; ',
+    'Link': 'accordion'
+  },
+  {
+    'ComponentName': 'Accordion',
+    'Descripotion': 'you might wanna add a null check to the return statement, in my case I was passing in an empty string and it was causing my app to crash. return value && value.length > limit ? value.substring(0, limit) + trail : value; ',
+    'Link': 'accordion'
   },
   {
     'ComponentName': 'Accordion',

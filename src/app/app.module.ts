@@ -17,6 +17,18 @@ import { HeaderComponent } from './header/header.component';
 import { ListComponentsComponent } from './list-components/list-components.component';
 import { WebsiteComponent } from './website/website.component';
 import { LinksComponent } from './links/links.component';
+import { PaginationDirective } from './directives/pagination.directive';
+import { PaginationComponent } from './pagination/pagination.component';
+import { SearchPipe } from './Pipe/search.pipe';
+import { FilterComponent } from './filter/filter.component';
+import { Pagination2Component } from './pagination2/pagination2.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { InterviewqstComponent } from './interviewqst/interviewqst.component';
+import { RichTextEditorComponent } from './rich-text-editor/rich-text-editor.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { TableComponent } from './table/table.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +42,18 @@ import { LinksComponent } from './links/links.component';
     HeaderComponent,
     ListComponentsComponent,
     WebsiteComponent,
-    LinksComponent
+    LinksComponent,
+    PaginationDirective,
+    PaginationComponent,
+    SearchPipe,
+    FilterComponent,
+    Pagination2Component,
+    InterviewqstComponent,
+    RichTextEditorComponent,
+    AutocompleteComponent,
+    TableComponent,
+    StudentListComponent,
+    ViewStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +62,8 @@ import { LinksComponent } from './links/links.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    NgbModule
-
+    NgbModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

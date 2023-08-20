@@ -1,0 +1,13 @@
+<div class="d-flex align-items-center justify-content-end">
+  <div class="col-md-1">
+    <select class="form-select" [value]="itemsPerPage" (change)="changePageSize($event)">
+      <option value="2">2 per page</option>
+      <option value="4">4 per page</option>
+      <option value="6">6 per page</option>
+      <option value="8">8 per page</option>
+    </select>
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-outline-primary" *ngFor="let item of pageNumber" [ngClass]="{'active': item == selectedPage}" (click)="changePage(item)">{{item}}</button>
+  </div>
+</div>
